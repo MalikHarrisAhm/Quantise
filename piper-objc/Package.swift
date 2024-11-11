@@ -12,14 +12,10 @@ let package = Package(
             name: "piper-objc",
             targets: [
                 "piper-objc"
-            ]),
-        .library(name: "piper-player",
-                 targets: [
-                    "piper-player"
-                 ])
+            ])
     ],
     dependencies: [
-        .package(url: "https://github.com/IhorShevchuk/piper-spm",
+        .package(url: "https://github.com/MalikHarrisAhm/piper-spm",
                  .upToNextMajor(from: "2023.11.14"))
     ],
     targets: [
@@ -34,11 +30,7 @@ let package = Package(
                 linkerSettings: [
                     .linkedFramework("NaturalLanguage")
                 ]
-               ),
-        .target(name: "piper-player",
-                dependencies: [
-                    .target(name: "piper-objc")
-                ])
+               )
     ],
     cxxLanguageStandard: .cxx17
 )
